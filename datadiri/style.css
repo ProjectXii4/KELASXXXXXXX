@@ -1,0 +1,271 @@
+/* Data Diri Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #f8f9fa, #e9ecef);
+}
+
+header {
+    background: #343a40;
+    color: #fff;
+    padding: 15px 30px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 1000;
+}
+
+header .logo {
+    float: left;
+}
+
+header .logo h1 {
+    margin: 0;
+    font-size: 26px;
+    font-weight: bold;
+    color: #000000;
+}
+
+header nav {
+    float: right;
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Add space between nav items */
+}
+
+header nav ul li {
+    position: relative;
+}
+
+header nav ul li a {
+    color: #000000;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 28px;
+    padding: 10px 15px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+header nav ul li a:hover {
+    background-color: #4b4848;
+    color: #ffffff;
+    transform: scale(1.05);
+}
+
+header nav ul li::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background: #007bff;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+header nav ul li:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-container .logo {
+    flex: 1;
+}
+
+.header-container nav {
+    flex: 2;
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 15px 20px;
+    }
+
+    header .logo h1 {
+        font-size: 22px;
+    }
+
+    header nav {
+        float: none;
+        text-align: center;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    header nav ul li {
+        margin: 0;
+    }
+
+    header nav ul li a {
+        display: block;
+        padding: 12px;
+    }
+}
+
+.data-diri {
+    padding: 80px 20px 60px;
+    text-align: center;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin: 10px auto;
+    max-width: 800px;
+}
+
+.data-diri .container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Gaya umum untuk seluruh halaman */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('/assets/IMG_2086.JPG') no-repeat center center fixed;
+    background-size: cover;
+    /* Background-size cover memastikan gambar menutupi seluruh area tanpa memotong */
+}
+
+/* Atur elemen utama agar tampil di atas background */
+header, .content, footer {
+    background: rgba(255, 255, 255, 0.8); /* Latarnya sedikit transparan agar background masih terlihat */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin: 20px auto;
+    max-width: 1200px; /* Agar elemen tidak terlalu melebar pada layar besar */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        background-size: cover; /* Maintain cover for smaller screens */
+    }
+
+    header, .content, footer {
+        padding: 10px;
+        margin: 10px;
+    }
+}
+
+
+/* CSS untuk profile */
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.profile-img {
+    border-radius: 5px;
+    width: 700px;
+    max-width: 700px; /* Maksimal lebar gambar */
+    height: auto; /* Menjaga rasio gambar */
+    object-fit: cover;
+    border: 5px solid #ffffff;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+.profile-info {
+    margin-top: 20px;
+}
+
+.profile-info h1 {
+    margin: 0;
+    font-size: 2.5em;
+    color: #343a40;
+}
+
+.profile-info p {
+    font-size: 1.2em;
+    color: #495057;
+    line-height: 1.6;
+}
+
+.contact-info {
+    background: #f1f3f5;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin-top: 30px;
+}
+
+.contact-info h2 {
+    margin-top: 0;
+    font-size: 2em;
+    color: #343a40;
+}
+
+.contact-info ul {
+    list-style: none;
+    padding: 0;
+    font-size: 1.1em;
+    color: #495057;
+}
+
+.contact-info ul li {
+    margin: 10px 0;
+}
+
+.contact-info ul li a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.contact-info ul li a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    background: #343a40;
+    color: #fff;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .profile-img {
+        width: 100%;
+        max-width: 400px; /* Adjusted max-width for smaller screens */
+        height: auto;
+    }
+
+    header {
+        padding: 15px;
+    }
+
+    header .logo h1 {
+        font-size: 20px;
+    }
+
+    header nav ul li {
+        margin: 0 10px;
+    }
+
+    .data-diri {
+        padding: 60px 10px 40px;
+    }
+}
+
+
