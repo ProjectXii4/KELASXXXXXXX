@@ -8,7 +8,7 @@
 
 body {
     background: url('/assets/FOTO\ KELAS\ 3.JPG') no-repeat center center fixed;
-    background-size: cover;
+    background-size: auto;
     margin: 0;
     font-family: Arial, sans-serif;
 }
@@ -20,87 +20,98 @@ body {
     margin: 0 auto;
 }
 
-/* Header */
+
+/* Navbar Styles */
 header {
-    background: rgba(255, 255, 255, 0.9); /* Slightly more opaque */
-    color: #333;
-    padding: 15px 0;
+    background: #343a40;
+    color: #fff;
+    padding: 10px 40px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     position: fixed;
     width: 100%;
-    top: 0;
-    left: 0;
     z-index: 1000;
-    border-bottom: 1px solid #ddd;
 }
 
-nav ul {
-    list-style: none;
-    text-align: center;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: #000000;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s, border-bottom 0.3s;
-    padding: 5px;
-}
-
-nav ul li a:hover {
-    color: #f39c12;
-    border-bottom: 2px solid #f39c12;
-}
-
-/* Hero Section */
-.hero {
-    position: relative;
-    background: url('/assets/FOTO\ KELASSS.JPG') no-repeat center center;
-    background-size: cover;
-    color: #fff;
-    padding: 300px 0;
-    text-align: center;
-    min-height: 400px;
+header .container {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
-}
-
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
-    z-index: 1;
-}
-
-.hero-content {
-    position: relative;
-    z-index: 2;
-    background: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
-    padding: 30px;
-    border-radius: 10px;
-    max-width: 600px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
-.hero h1 {
-    font-size: 3em;
-    margin-bottom: 15px;
-    animation: fadeInUp 1s ease-out;
+header .logo h1 {
+    margin: 0;
+    font-size: 18px;
+    letter-spacing: 1px;
 }
 
-.hero p {
-    font-size: 1.2em;
-    margin-bottom: 20px;
-    animation: fadeInUp 1.5s ease-out;
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap; /* Prevent wrapping */
+}
+
+header nav ul li {
+    margin: 0 10px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header nav ul {
+        flex-direction: row;
+        overflow-x: auto; /* Enable horizontal scroll */
+    }
+
+    header nav ul li {
+        margin: 0 5px;
+    }
+}
+
+/* Hero Slider Styles */
+.hero {
+    position: relative;
+    height: 750px;
+    overflow: hidden;
+}
+
+.hero-slider {
+    display: flex;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.slide.active {
+    transform: translateX(0);
+}
+
+.slide:not(.active) {
+    display: none;
 }
 
 .btn-primary {

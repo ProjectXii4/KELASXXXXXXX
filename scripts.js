@@ -1,17 +1,21 @@
-// scripts.js
+document.addEventListener('DOMContentLoaded', function () {
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.hero-slider .slide');
+    const totalSlides = slides.length;
 
-let slideIndex = 0;
-showSlides();
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.classList.remove('active');
+            if (i === index) {
+                slide.classList.add('active');
+            }
+        });
+    }
 
-function showSlides() {
-    let slides = document.querySelectorAll('.slide');
-    for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = 'none';
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        showSlide(currentSlide);
     }
-    slideIndex++;
-    if (slideIndex > slides.length) {
-        slideIndex = 1;
-    }
-    slides[slideIndex - 1].style.display = 'block';
-    setTimeout(showSlides, 3000); // Change image every 3 seconds
-}
+
+    setInterval(nextSlide, 3000); // Change slide every 3 seconds
+});
